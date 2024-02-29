@@ -35,4 +35,11 @@ public class EmployeeRestController {
                                                                       @RequestParam String email) {
         return ResponseEntity.ok(this.employeeSearchDao.findAllBySimpleQuery(firstName, lastName, email));
     }
+
+    @GetMapping(path = "/search-dynamic")
+    public ResponseEntity<List<Employee>> getAllEmployeesSearchDynamic(@RequestParam(required = false) String firstName,
+                                                                       @RequestParam(required = false) String lastName,
+                                                                       @RequestParam(required = false) String email) {
+        return ResponseEntity.ok(this.employeeSearchDao.findAllByDynamicQuery(firstName, lastName, email));
+    }
 }

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface IEmployeeSearchDao {
     List<Employee> findAllBySimpleQuery(String firstName, String lastName, String email);
+    List<Employee> findAllByDynamicQuery(String firstName, String lastName, String email);
 }
